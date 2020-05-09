@@ -1,4 +1,6 @@
-# AFLFast
+#Mix
+
+# 以下为AFLFast原公告(中文为添加)
 <a href="https://mboehme.github.io/paper/CCS16.pdf"><img src="https://mboehme.github.io/paper/CCS16.png" align="right" width="250"></a>
 Power schedules implemented by Marcel Böhme \<marcel.boehme@acm.org\>. 
 AFLFast is an extension of AFL which is written and maintained by 
@@ -10,7 +12,7 @@ AFLFast is a fork of AFL that has been shown to outperform AFL 1.96b by an **ord
 
 Essentially, we observed that most generated inputs exercise the same few "high-frequency" paths and developed strategies to gravitate towards low-frequency paths, to stress significantly more program behavior in the same amount of time. We devised several **search strategies** that decide in which order the seeds should be fuzzed and **power schedules** that smartly regulate the number of inputs generated from a seed (i.e., the time spent fuzzing a seed). We call the number of inputs generated from a seed, the seed's **energy**. 
 
-We find that AFL's exploitation-based constant schedule assigns **too much energy to seeds exercising high-frequency paths** (e.g., paths that reject invalid inputs) and not enough energy to seeds exercising low-frequency paths (e.g., paths that stress interesting behaviors). Technically, we modified the computation of a seed's performance score (`calculate_score`), which seed is marked as favourite (`update_bitmap_score`), and which seed is chosen next from the circular queue (`main`). We implemented the following schedules (in the order of their effectiveness, best first):
+We find that AFL's exploitation-based constant schedule assigns **too much energy to seeds exercising high-frequency paths** (e.g., paths that reject invalid inputs) and not enough energy to seeds exercising low-frequency paths (e.g., paths that stress interesting behaviors). Technically, we modified the computation of a seed's performance score (`calculate_score`), which seed is marked as favourite (`update_bitmap_score`), and which seed is chosen next from the circular queue (`main`). We implemented the following schedules (in the order of their effectiveness, best first   其中mix为fast,explore,quad三种策略的结合,是本人实验结果,且默认为mix能量分配策略):
 
 | AFL flag | Power Schedule             | 
 | ------------- | -------------------------- |
