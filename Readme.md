@@ -1,6 +1,7 @@
 # Mix
 
 #以下为AFLFast原公告(中文为添加)
+
 <a href="https://mboehme.github.io/paper/CCS16.pdf"><img src="https://mboehme.github.io/paper/CCS16.png" align="right" width="250"></a>
 Power schedules implemented by Marcel Böhme \<marcel.boehme@acm.org\>. 
 AFLFast is an extension of AFL which is written and maintained by 
